@@ -1,0 +1,186 @@
+body {
+  font-family: 'Arial', sans-serif; /* משפחת גופנים לכל הדף */
+  background: linear-gradient(135deg, #e0eafc, #cfdef3); /* רקע מדורג כחול בהיר */
+  margin: 0; /* הסרת שוליים חיצוניים */
+  padding: 20px; /* ריווח פנימי */
+  direction: rtl; /* יישור לימין (עברית/ערבית) */
+}
+
+h1 {
+  text-align: center; /* יישור כותרת למרכז */
+  color: #2c3e50; /* צבע טקסט */
+  margin-bottom: 30px; /* ריווח מתחת */
+}
+
+h2 {
+  color: #34495e; /* צבע כותרת משנית */
+  margin-bottom: 15px; /* ריווח מתחת */
+}
+
+
+.setup-container, .game-container {
+  max-width: 1200px; /* רוחב מקסימלי */
+  margin: 0 auto; /* מרכז את האלמנט */
+  background: #fff; /* רקע לבן */
+  padding: 25px; /* ריווח פנימי */
+  border-radius: 12px; /* פינות מעוגלות */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15); /* צל */
+}
+
+.grid-options {
+  display: flex; /* תצוגה גמישה */
+  flex-wrap: wrap; /* ירידת שורות אוטומטית */
+  gap: 15px; /* ריווח בין פריטים */
+  margin-bottom: 30px; /* ריווח מתחת */
+}
+
+.grid-options label {
+  display: flex; /* תצוגה גמישה */
+  align-items: center; /* יישור אנכי */
+  gap: 5px; /* ריווח בין אלמנטים */
+  cursor: pointer; /* סמן יד */
+  padding: 8px 12px; /* ריווח פנימי */
+  background: #f5f7fa; /* רקע אפור בהיר */
+  border-radius: 6px; /* פינות מעוגלות */
+  border: 1px solid #ddd; /* מסגרת דקה */
+  transition: all 0.2s; /* אנימציה חלקה */
+}
+
+.grid-options label:hover {
+    background: #e1e5eb; /* רקע כהה יותר במעבר עכבר */
+}
+
+.ship-inputs {
+  display: grid; /* תצוגת גריד */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* עמודות דינמיות */
+  gap: 15px; /* ריווח בין פריטים */
+  margin-bottom: 30px; /* ריווח מתחת */
+}
+
+.ship-inputs input {
+  width: 60px; /* רוחב שדה קלט */
+  padding: 5px; /* ריווח פנימי */
+  border: 1px solid #ddd; /* מסגרת דקה */
+  border-radius: 4px; /* פינות מעוגלות */
+}
+
+#startGame {
+  display: block; /* תצוגה כבלוק */
+  margin: 0 auto; /* מרכז את הכפתור */
+  padding: 12px 30px; /* ריווח פנימי */
+  background: #3498db; /* רקע כחול */
+  color: #fff; /* טקסט לבן */
+  border: none; /* ללא מסגרת */
+  border-radius: 6px; /* פינות מעוגלות */
+  cursor: pointer; /* סמן יד */
+  font-size: 16px; /* גודל גופן */
+  font-weight: bold; /* טקסט מודגש */
+  transition: 0.3s; /* אנימציה חלקה */
+}
+
+#startGame:hover {
+    background: #2980b9;  /* רקע כהה יותר במעבר עכבר */
+}
+
+.game-container {
+    display: flex; /* תצוגה גמישה */
+    gap: 30px; /* ריווח בין לוח ללוח מידע */
+}
+
+#board {
+    flex: 1; /* לוח המשחק תופס את כל המקום האפשרי */
+}
+
+.info-panel {
+    width: 300px; /* רוחב פאנל מידע */
+}
+
+table {
+    border-collapse: collapse; /* איחוד גבולות תאים */
+    width: 100%; /* טבלה ברוחב מלא */
+}
+
+#board table {
+    margin: 0 auto;  /* מרכז את הטבלה בלוח */
+}
+
+#board td {
+    width: 35px;/* רוחב תא */
+    height: 35px; /* גובה תא */
+    border: 1px solid #2c3e50; /* מסגרת כהה */
+    background: #34495e; /* רקע כחול כהה */
+    cursor: pointer;  /* סמן יד */
+    transition: all 0.2s; /* אנימציה חלקה */
+    position: relative;  /* מיקום יחסי לאפקטים */
+}
+
+#board td:hover {
+    background: #3c5a76;  /* רקע כחול כהה יותר במעבר עכבר */
+}
+
+#board td.hit {
+    background: #c0392b;  /* רקע אדום כאשר פגעו */
+}
+
+#board td.miss {
+    background: #7f8c8d; /* רקע אפור כאשר פספסו */
+
+}
+
+.ship-counter {
+  background: #f5f7fa; /* רקע אפור בהיר */
+  padding: 15px; /* ריווח פנימי */
+  border-radius: 8px; /* פינות מעוגלות */
+  margin-top: 20px; /* ריווח מעל */
+}
+
+
+#shipsRemaining {
+  width: 100%; /* טבלה ברוחב מלא */
+  margin-top: 10px; /* ריווח מעל */
+}
+
+#shipsRemaining th {
+  background: #3498db; /* רקע כחול לכותרת */
+  color: #fff; /* טקסט לבן */
+  padding: 8px; /* ריווח פנימי */
+  text-align: center; /* יישור למרכז */
+}
+
+#shipsRemaining td {
+  padding: 8px; /* ריווח פנימי */
+  text-align: center; /* יישור למרכז */
+  border-bottom: 1px solid #ddd; /* מסגרת תחתונה דקה */
+}
+
+
+.ship-count {
+  font-weight: bold; /* טקסט מודגש */
+  color: #c0392b; /* טקסט אדום */
+}
+
+#msg {
+  position: fixed; /* מיקום קבוע במסך */
+  top: 20px; /* מרחק מהחלק העליון */
+  left: 50%; /* אמצע המסך אופקית */
+  transform: translateX(-50%); /* יישור למרכז */
+  background: rgba(52, 73, 94, 0.9); /* רקע כהה שקוף */
+  color: #fff; /* טקסט לבן */
+  padding: 10px 20px; /* ריווח פנימי */
+  border-radius: 6px; /* פינות מעוגלות */
+  font-weight: bold; /* טקסט מודגש */
+  display: none; /* מוסתר כברירת מחדל */
+  z-index: 1000; /* מעל כל האלמנטים */
+}
+
+
+.boom-animation {
+  animation: boom 0.8s; /* אפקט פיצוץ */
+}
+
+@keyframes boom {
+  0% { transform: scale(1); background: yellow; } /* התחלה - צהוב */
+  50% { transform: scale(1.2); background: orange; } /* אמצע - כתום ומוגדל */
+  100% { transform: scale(1); background: #c0392b; } /* סיום - אדום רגיל */
+}
+
